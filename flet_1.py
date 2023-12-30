@@ -4,11 +4,11 @@ def main(page: ft.Page):
     page.title = "Flet Próba"
     
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment=ft.MainAxisAlignment.SPACE_EVENLY
+    page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
 
     txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
     txt_number2 = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=50)
-    
+    txt_szoveg = ft.TextField(value="Hello", text_align=ft.TextAlign.CENTER, width=150)
 
     def minus_click(e):
         txt_number.value = str(int(txt_number.value) - 1)
@@ -30,6 +30,9 @@ def main(page: ft.Page):
     
     
     page.add(
+        ft.Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh vitae purus consectetur facilisis sed vitae ipsum. Quisque faucibus sed nulla placerat sagittis. Phasellus condimentum risus vitae nulla vestibulum auctor. Curabitur scelerisque, nibh eget imperdiet consequat, odio ante tempus diam, sed volutpat nisl erat eget turpis. Sed viverra, diam sit amet blandit vulputate, mi tellus dapibus lorem, vitae vehicula diam mauris placerat diam. Morbi sit amet pretium turpis, et consequat ligula. Nulla velit sem, suscipit sit amet dictum non, tincidunt sed nulla. Aenean pellentesque odio porttitor sagittis aliquam. Nam varius at metus vitae vulputate. Praesent faucibus nibh lorem, eu pretium dolor dictum nec. Phasellus eget dui laoreet, viverra magna vitae, pellentesque diam.",
+            width=700,
+            height=100,),
         ft.Row(
             [
                 ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
@@ -40,12 +43,26 @@ def main(page: ft.Page):
         )
         
     )
+
+    page.add(
+        ft.Row(
+            [
+                ft.ElevatedButton("Say hello!"),
+                ft.Divider(height=30, color="#aaff0000",thickness=40),                
+                txt_szoveg,
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+        )
+        
+        
+    )
+
     page.add(
         ft.Row(
             [
                 ft.IconButton(ft.icons.REMOVE, on_click=minus_click2,scale=1,bgcolor="#aaff0000"),
                 txt_number2,
-                ft.IconButton(ft.icons.ENGINEERING, on_click=plus_click2,scale=1,bgcolor="#aaff0000"),
+                ft.IconButton(ft.icons.ENGINEERING, on_click=plus_click2,scale=1,bgcolor="#aaff0000", tooltip="Hello"),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
             
