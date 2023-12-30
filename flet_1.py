@@ -7,7 +7,7 @@ def main(page: ft.Page):
     page.horizontal_alignment=ft.MainAxisAlignment.SPACE_EVENLY
 
     txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
-    txt_number2 = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
+    txt_number2 = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=50)
     
 
     def minus_click(e):
@@ -19,11 +19,11 @@ def main(page: ft.Page):
         page.update()
 
     def minus_click2(e):
-        txt_number2.value = str(int(txt_number.value) - 1)
+        txt_number2.value = str(int(txt_number2.value) - 1)
         page.update()
 
     def plus_click2(e):
-        txt_number2.value = str(int(txt_number.value) + 1)
+        txt_number2.value = str(int(txt_number2.value) + 1)
         page.update()
 
     
@@ -43,11 +43,12 @@ def main(page: ft.Page):
     page.add(
         ft.Row(
             [
-                ft.IconButton(ft.icons.REMOVE, on_click=minus_click2),
+                ft.IconButton(ft.icons.REMOVE, on_click=minus_click2,scale=1,bgcolor="#aaff0000"),
                 txt_number2,
-                ft.IconButton(ft.icons.ADD, on_click=plus_click2),
+                ft.IconButton(ft.icons.ENGINEERING, on_click=plus_click2,scale=1,bgcolor="#aaff0000"),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
+            
         )
         
     )
