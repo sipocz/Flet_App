@@ -42,6 +42,7 @@ def main(page: ft.Page):
         ],
         width=float("inf"),
         expand=True,
+        
     )
     
     
