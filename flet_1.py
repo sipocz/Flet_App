@@ -39,6 +39,7 @@ def main(page: ft.Page):
             cv.Circle(120, 90, 10, stroke_paint),
             cv.Circle(124, 87, 5, fill_paint),
             cv.Arc(70, 95, 60, 40, 0, math.pi, paint=stroke_paint),
+            
         ],
         width=float("inf"),
         expand=True,
